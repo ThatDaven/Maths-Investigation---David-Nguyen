@@ -1,0 +1,67 @@
+flatten(x):
+  flattens a nexted list into a basic list with type detection and interation moderation
+  is specifically needed for generating histogram with random sampling
+graph_samp():
+  generates a histogram using random samples using the sample_pick(x, n) function
+  takes in 2 arguments after through user input but cannot be manually set
+validate(x):
+  checks if a number is a numerical number (i used to use isnumeric, but switch to checking if it was a float or not
+  works for lists and separate numbers itself
+pseudo_uniform_bad(mult=5,
+                       mod=11,
+                       seed=1,
+                       size=1):
+  generates a random number using a predictable pseudo uniformity with an array of zeros to generate a random number
+pseudo_uniform_good(mult=16807,
+                        mod=(2**31)-1,
+                        seed=123456789,
+                        size=1):
+  same as uniform_bad but more accurate to real life random sampling
+pseudo_uniform(low=0,
+                   high=1,
+                  seed=123456789,
+                  size=1):
+  sets the boundaries for random number generation, is useful for sample_pick(x, n)                  
+sample_pick(lst, k):
+  lst takes in the list of input and k is the number of random samples
+  uses clock millisecond time to the 9th or so digit to find the most random number possible with the help of the pseudo_number() functions
+not_sample_pick(x, num):
+  random sampling but uses pop to remove duplicate numbers
+minimum(x)
+  finds minimum number of a given list
+maximum(x)
+  finds max of a given list
+median(x)
+  finds median of a given list
+mode(x)
+  finds the mode/s of a given list
+mean(x)
+  finds the mean of a given list
+variance(x)
+  finds the variance of a given list
+stand_dev(x)
+  finds standard deviation of a given list
+lower_quartile(x)
+  finds list's lower quartile
+upper_quartile(x)
+  finds list's upper quartile
+inter_qr(x)
+  finds inter quartile range using 2 above functions
+range_lst(x)
+  finds the range of given list
+total(x)
+  finds total of given list
+sampling_gui(x)
+  takes a list to be used for 2 separate ramdon sampling function
+space_sep()
+  uses .strip() to get space separated data
+val_feq()
+  gets values and frequencies to a list through user input
+stem_leaf()
+  enter data in stem and leaf plot style to be added to a list for data analysis
+start()
+  starts the gui
+analyse_data()
+  analyses data in given ways through the functions above
+do_now()
+  used for further data analysis and choice after data input and analysis
