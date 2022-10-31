@@ -12,25 +12,25 @@ def sampling_gui(x): #is used for calling random sampling from the other gui
   if choice == '1':
     return sample_pick(x, num)
   elif choice == '2':
-    return sample_pick_replacement(x, num)
+    return not_sample_pick(x, num)
 #######################################################################################
 def space_sep():
   print("You have selected to enter space-separated data.")
   x = input("Enter or paste the list of data separated by spaces: ").split() #splits all numbers by spaces and appends to list
-  while validate(x) == 'false': #validates number if not real then restarts
+  while validate(x) == False: #validates number if not real then restarts
     x = input("Enter or paste the list of data separated by spaces: ").split()
   return x
 
 def val_feq():
   print("You have selected to enter VALUES and their FREQUENCIES.")
   f = input("First, enter or paste the VALUES, separated by spaces: ").split() #gets all numbers
-  while validate(f) == 'false':
+  while validate(f) == False:
       f = input("First, enter or paste the VALUES, separated by spaces: ").split()
   print("")
   v = input("Now enter the corresponding FREQUENCIES separated by spaces: ").split() #gets their frequencies
-  while validate(v) == 'false':
+  while validate(v) == False:
       v = input("Now enter the corresponding FREQUENCIES separated by spaces: ").split()
-  if validate(v) == 'true':
+  if validate(v) == True:
     for i in range(len(f)): #appends to a list 
       for h in range(int(v[i])): #appends the number n many times (n is frequency)
         x.append(f[i])
@@ -60,7 +60,7 @@ def start():
 (1) A list of space-separated data")
 (2) Values and their frequencies")
 (3) Stem-and-leaf data")
-(4) Analyse trends in data using a graph function (with the predefined list of heights given for this task), 
+(4) Analyse trends in data using a graph function (with the predefined list of heights given for this task),
     afterwards you can perform data analysis with the same list of heights provided.
 ''')
   choice = input("Enter the number next to your choice: ")
